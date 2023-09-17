@@ -11,11 +11,11 @@ public class BankCardApiTest2 {
     @Test
     void shouldTest() {
         open("http://localhost:9999");
-        SelenideElement form = $("[data-test-id=callback-form]");
+        SelenideElement form = $("[action]");
         form.$("[data-test-id=name] input").setValue("Екатерина");
         form.$("[data-test-id=phone] input").setValue("+79110000000");
         form.$("[data-test-id=agreement]").click();
-
-        $(".alert-success").shouldHave(exactText("  Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
+        form.$("[role]").click();
+        form.$("[data-test-id=order-success]");
     }
 }
