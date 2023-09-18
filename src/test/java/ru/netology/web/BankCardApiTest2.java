@@ -15,7 +15,7 @@ public class BankCardApiTest2 {
         form.$("[data-test-id=name] input").setValue("Екатерина");
         form.$("[data-test-id=phone] input").setValue("+79110000000");
         form.$("[data-test-id=agreement]").click();
-        form.$("[role]").click();
-        form.$("[data-test-id=order-success]");
+        form.$("[role=\"button\"]").click();
+        $(".Success_successBlock__2L3Cw").shouldHave(exactText("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
     }
 }
